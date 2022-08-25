@@ -12,6 +12,8 @@ class _ListSectionState extends State<ListSection> {
 
   Widget _buildList() {
     return ListView.builder(
+      itemCount: _suggestions
+          .length, // If this is not been set, this will cause out of range error
       itemBuilder: (context, i) {
         return ElevatedButton(
             onPressed: () {
