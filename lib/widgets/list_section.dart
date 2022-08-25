@@ -8,25 +8,16 @@ class ListSection extends StatefulWidget {
 }
 
 class _ListSectionState extends State<ListSection> {
-  final _suggestions = <WordPair>[];
-  final _biggerFont = const TextStyle(fontSize: 18);
+  final _suggestions = List.generate(50, (index) => WordPair.random().asString);
 
   Widget _buildList() {
     return ListView.builder(
-      padding: const EdgeInsets.all(16.0),
-      itemBuilder: /*1*/ (context, i) {
-        if (i.isOdd) return const Divider(); /*2*/
-
-        final index = i ~/ 2; /*3*/
-        if (index >= _suggestions.length) {
-          _suggestions.addAll(generateWordPairs().take(10)); /*4*/
-        }
-        return ListTile(
-          title: Text(
-            _suggestions[index].asPascalCase,
-            style: _biggerFont,
-          ),
-        );
+      itemBuilder: (context, i) {
+        return ElevatedButton(
+            onPressed: () {
+              print(i);
+            },
+            child: Text('${_suggestions[i]}🚀'));
       },
     );
   }
@@ -34,7 +25,7 @@ class _ListSectionState extends State<ListSection> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 500,
+      height: 600,
       child: _buildList(),
     );
   }

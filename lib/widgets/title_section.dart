@@ -24,10 +24,10 @@ class _TitleSectionState extends State<TitleSection> {
                 /*2*/
                 GestureDetector(
                   onTap: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) {
-                      return const Detail();
-                    }));
+                    // Navigator.push(context,
+                    //     MaterialPageRoute(builder: (context) {
+                    //   return const Detail();
+                    // }));
                   },
                   child: Container(
                     padding: const EdgeInsets.only(bottom: 8),

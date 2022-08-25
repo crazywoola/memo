@@ -12,15 +12,9 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Column(
-      children: [
-        const TitleSection(),
-        const ListSection(),
-        ElevatedButton(
-          onPressed: () {
-            Navigator.pushNamed(context, '/detail');
-          },
-          child: const Text('Launch screen'),
-        ),
+      children: const [
+        TitleSection(),
+        ListSection(),
       ],
     );
   }
