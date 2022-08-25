@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import './widgets/home_page.dart';
+import './widgets/home.dart';
+import './widgets/detail.dart';
 
 void main() => runApp(const MyApp());
 
@@ -10,18 +11,15 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        title: 'Memo App',
-        theme: ThemeData(
-          primarySwatch: Colors.blue,
-        ),
-        home: Scaffold(
-            appBar: AppBar(
-              title: const Text('Memo Index'),
-            ),
-            body: Column(
-              children: const [
-                HomePage(),
-              ],
-            )));
+      title: 'Memo App',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      initialRoute: '/',
+      routes: {
+        '/': (context) => const Home(),
+        '/detail': (context) => const Detail(),
+      },
+    );
   }
 }

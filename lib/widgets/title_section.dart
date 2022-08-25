@@ -24,7 +24,6 @@ class _TitleSectionState extends State<TitleSection> {
                 /*2*/
                 GestureDetector(
                   onTap: () {
-                    print('this should work');
                     Navigator.push(context,
                         MaterialPageRoute(builder: (context) {
                       return const Detail();
