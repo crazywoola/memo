@@ -9,7 +9,7 @@ class ListSection extends StatefulWidget {
 }
 
 class _ListSectionState extends State<ListSection> {
-  final _suggestions = List.generate(50, (index) => WordPair.random().asString);
+  final _suggestions = List.generate(10, (index) => WordPair.random().asString);
 
   Widget _buildList() {
     return ListView.builder(
@@ -35,7 +35,7 @@ class _ListSectionState extends State<ListSection> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 600,
+      height: 300,
       child: _buildList(),
     );
   }

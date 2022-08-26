@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import './widgets/home.dart';
 import './widgets/detail.dart';
+import './widgets/form.dart';
 
 void main() => runApp(const MyApp());
 
@@ -18,7 +19,8 @@ class MyApp extends StatelessWidget {
       initialRoute: '/',
       routes: {
         '/': (context) => const Home(),
-        Detail.routeName: (context) => const Detail()
+        Detail.routeName: (context) => const Detail(),
+        CustomForm.routeName: (context) => const CustomForm(),
       },
     );
   }
