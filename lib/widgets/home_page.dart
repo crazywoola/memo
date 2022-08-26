@@ -10,10 +10,15 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   Widget _someColumnNav() {
-    return Column(children: const [
-      Text('Home'),
-      Text('Grid System'),
-      Text('Form'),
+    return Column(children: [
+      const Text('Home'),
+      const Text('Grid System'),
+      TextButton(
+        onPressed: () {
+          Navigator.pushNamed(context, '/form');
+        },
+        child: const Text('Form'),
+      ),
     ]);
   }
 
