@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:english_words/english_words.dart';
-import './detail.dart';
+// import './detail.dart';
 
 class TitleSection extends StatefulWidget {
   const TitleSection({Key? key}) : super(key: key);

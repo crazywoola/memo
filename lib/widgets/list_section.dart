@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:english_words/english_words.dart';
+import './detail.dart';
 
 class ListSection extends StatefulWidget {
   const ListSection({Key? key}) : super(key: key);
@@ -17,7 +18,14 @@ class _ListSectionState extends State<ListSection> {
       itemBuilder: (context, i) {
         return ElevatedButton(
             onPressed: () {
-              print(i);
+              Navigator.pushNamed(
+                context,
+                Detail.routeName,
+                arguments: DetailParams(
+                  _suggestions[i],
+                  'extracted in the build method. ${_suggestions[i]}',
+                ),
+              );
             },
             child: Text('${_suggestions[i]}🚀'));
       },

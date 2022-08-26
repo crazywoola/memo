@@ -34,6 +34,7 @@ class Detail extends StatelessWidget {
         child: Column(children: [
           _hero(),
           Text(params.title),
+          Text(params.message),
         ]),
       ),
     );
