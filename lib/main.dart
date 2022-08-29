@@ -1,27 +1,28 @@
 import 'package:flutter/material.dart';
-import './widgets/home.dart';
-import './widgets/detail.dart';
-import './widgets/form.dart';
+import 'package:beamer/beamer.dart';
+import './router.dart';
 
-void main() => runApp(const MyApp());
+void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  final routerDelegate = BeamerDelegate(
+    // There are three different options of building the locations.
+    // They are interchangeable, depending on personal taste (in this case).
+    //
+    // OPTION A:
+    locationBuilder: simpleLocationBuilder,
+    //
+    // OPTION B:
+    //locationBuilder: beamerLocationBuilder,
+  );
 
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Memo App',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      initialRoute: '/',
-      routes: {
-        '/': (context) => const Home(),
-        Detail.routeName: (context) => const Detail(),
-        CustomForm.routeName: (context) => const CustomForm(),
-      },
+    return MaterialApp.router(
+      debugShowCheckedModeBanner: false,
+      routerDelegate: routerDelegate,
+      routeInformationParser: BeamerParser(),
     );
   }
 }
